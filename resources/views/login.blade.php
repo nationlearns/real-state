@@ -132,6 +132,9 @@ button{
   margin-right: 4px;
 }
 
+a{
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -151,7 +154,7 @@ button{
         <button>Log In</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+          <div class="fb"><a href="{{url('auth-register')}}"><i class="fa fa-user-circle"></i>  Register</a></div>
         </div>
     </form>
 </body>
