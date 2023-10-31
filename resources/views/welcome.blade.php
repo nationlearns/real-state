@@ -58,8 +58,13 @@
 <li><a href="#sponsors">Sponsors</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="blog.html">Blog</a></li>
+<<<<<<< HEAD
 <li><a href="{{url('user-login')}}">Login</a></li>
 <li><a href="{{url('user-register')}}">Register</a></li>
+=======
+<li><a href="{{url('auth-login')}}">Login</a></li>
+<li><a href="{{url('auth-register')}}">Register</a></li>
+>>>>>>> 12cfdd784300365bb88f73f0e75f3968afc8487b
 </ul>
 </nav>
 
