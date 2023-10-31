@@ -275,20 +275,6 @@ form .page .btns button.next {
                     <div class="check fas fa-check"></div>
                 </div>
                 <div class="step">
-                    <p>Debt</p>
-                    <div class="bullet">
-                        <span>4</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
-                    <p>Adress</p>
-                    <div class="bullet">
-                        <span>5</span>
-                    </div>
-                    <div class="check fas fa-check"></div>
-                </div>
-                <div class="step">
                     <p>Submit</p>
                     <div class="bullet">
                         <span>6</span>
@@ -328,37 +314,6 @@ form .page .btns button.next {
                             <button class="next-1 next">Next</button>
                         </div>
                     </div>
-                    <div class="page">
-                        <div class="title">Contact Info 2:</div>
-                        <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-2 prev">Previous</button>
-                            <button class="next-2 next">Next</button>
-                        </div>
-                    </div>
-                    <div class="page">
-                        <div class="title">Contact Info 3:</div>
-                        <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
-                        </div>
-                        <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
-                        </div>
-                        <div class="field btns">
-                            <button class="prev-3 prev">Previous</button>
-                            <button class="next-3 next">Next</button>
-                        </div>
-                    </div>
-
                     <div class="page">
                         <div class="title">Date of Birth:</div>
                         <div class="field">
