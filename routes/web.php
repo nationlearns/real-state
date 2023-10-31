@@ -18,8 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/auth-login', function () {
-    return view('login');
+Route::get('/user-register', function () {
+    return view('register');
+});
+Route::get('/user-login', function () {
+    return view('auth/login');
 });
 
 
