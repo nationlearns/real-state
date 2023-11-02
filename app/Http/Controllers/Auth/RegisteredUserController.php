@@ -36,12 +36,13 @@ class RegisteredUserController extends Controller
             'intrested_in' => $request->intrested_in,
             'budget' => $request->budget,
             'prefered_city' =>$request->prefered_city,
+            'annual_income' => $request->annual_income,
             'required_loans'=> $request->required_loans,
             'prefered_bank'  => $request->prefered_bank,
             'marital_status' => $request->marital_status,
             'city_id' => $request->city_id,
             'state_id' => $request->state_id,
-
+            'password' => Hash::make($request->password)
         ]);
 
         return response()->json(['status'=>400,'message' => 'User Created Successfully', 'userData' => $user]);
