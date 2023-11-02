@@ -11,14 +11,10 @@
     <title>Event HTML Template</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
-
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
-
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
 
@@ -94,8 +90,8 @@
 </head>
 
 <body>
-
-    <header id="header" class="transparent-navbar">
+@include('header')
+    <!-- <header id="header" class="transparent-navbar">
 
         <div class="container">
 
@@ -130,10 +126,8 @@
 
 </ul>
 </nav>
-
-        </div>
-
-    </header>
+</div>
+    </header> -->
 
 
     <div id="home">

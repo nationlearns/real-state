@@ -35,7 +35,7 @@
                     <div class="check fas fa-check"></div>
                 </div>
                 <div class="step">
-                    <p>Birth</p>
+                    <p>More Details</p>
                     <div class="bullet">
                         <span>3</span>
                     </div>
@@ -54,12 +54,30 @@
                     <div class="page slide-page">
                         <div class="title">Basic Info:</div>
                         <div class="field">
-                            <div class="label">First Name</div>
-                            <input type="text" required />
+                            <div class="label">Name</div>
+                            <input id= "name" placeholder="Enter Your Name" type="text" required />
                         </div>
                         <div class="field">
-                            <div class="label">Last Name</div>
-                            <input type="text" required />
+                            <div class="label">Email</div>
+                            <input id="email" placeholder="Enter Your Email" type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">City</div>
+                            <input id="city" placeholder="Enter the city" type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Intrested In</div>
+                            <select  id="intrested" required>
+                            <option value="">Select</option>
+                            <option value="Apartment">Apartment </option>
+                            <option value="Villa">Villa</option>
+                            <option value="Commercial ">Commercial </option>
+                            <option value="Resorts ">Resorts </option>
+                            <option value="Renting  ">Renting  </option>
+                            <option value="Just browsing  ">Just browsing  </option>
+                            <option value="Let's decide later ">Let's decide later </option>
+                            <option value="Others ">Others </option>
+                            </select>
                         </div>
                         <div class="field">
                             <button class="firstNext next">Next</button>
@@ -69,12 +87,11 @@
                     <div class="page">
                         <div class="title">Contact Info:</div>
                         <div class="field">
-                            <div class="label">Email Address</div>
-                            <input type="text" required />
+                            <div class="label">Mobile</div>
+                            <input type="Number"  maxlength="10" placeholder="Enter Your Mobile" required />
                         </div>
                         <div class="field">
-                            <div class="label">Phone Number</div>
-                            <input type="Number" required />
+                        <button class="next-1 next">Verify</button>
                         </div>
                         <div class="field btns">
                             <button class="prev-1 prev">Previous</button>
@@ -82,23 +99,49 @@
                         </div>
                     </div>
                     <div class="page">
-                        <div class="title">Date of Birth:</div>
                         <div class="field">
-                            <div class="label">Date</div>
+                            <div class="label">Your Budget</div>
                             <input type="text" required />
                         </div>
                         <div class="field">
-                            <div class="label">Gender</div>
+                            <div class="label">Which city are you looking the property in </div>
+                            <input type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Do you require any loans </div>
                             <select required>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
+                            <option value="">Select</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <div class="label">Which bank do you bank with </div>
+                            <select required>
+                                <option value="">Select</option>
+                                <option value="">SBI</option>
+                                <option value="">ICICI</option>
+                                <option value="">HDFC</option>
+                                <option value="">AXIS</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <div class="label">Your annual income </div>
+                            <input type="text" required />
+                        </div>
+                        <div class="field">
+                            <div class="label">Marital Status </div>
+                            <select required>
+                            <option value="">Select</option>
+                                <option>Single</option>
+                                <option>Married</option>
                             </select>
                         </div>
                         <div class="field btns">
                             <button class="prev-4 prev">Previous</button>
                             <button class="next-4 next">Next</button>
                         </div>
+                        
                     </div>
 
                     <div class="page">
@@ -119,8 +162,12 @@
                 </form>
             </div>
         </div>
-        <script>
-            initMultiStepForm();
+
+    </body>
+</html>
+
+<script>
+initMultiStepForm();
 
 function initMultiStepForm() {
     const progressNumber = document.querySelectorAll(".step").length;
@@ -205,5 +252,3 @@ function initMultiStepForm() {
 }
 
         </script>
-    </body>
-</html>
