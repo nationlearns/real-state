@@ -126,7 +126,7 @@
 <li><a href="#contact">Contact</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="{{url('user-login')}}">Login</a></li>
-<li><a href="{{url('user-register')}}">Register</a></li>
+<li><a href="{{url('auth-register')}}">Register</a></li>
 
 </ul>
 </nav>

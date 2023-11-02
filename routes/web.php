@@ -25,7 +25,7 @@ Route::get('/user-login', function () {
     return view('auth/login');
 });
 Route::get('/auth-register', function () {
-    return view('register');
+    return view('auth/register');
 });
 
 
