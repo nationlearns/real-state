@@ -35,9 +35,9 @@ class RegisteredUserController extends Controller
             'phone' => $request->phone,
             'intrested_in' => $request->intrested_in,
             'budget' => $request->budget,
-            'prefered_city' =>$request->prefered_city,
+            'prefered_city' => $request->prefered_city,
             'annual_income' => $request->annual_income,
-            'required_loans'=> $request->required_loans,
+            'required_loans' => $request->required_loans,
             'prefered_bank'  => $request->prefered_bank,
             'marital_status' => $request->marital_status,
             'city_id' => $request->city_id,
@@ -45,11 +45,12 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return response()->json(['status'=>400,'message' => 'User Created Successfully', 'userData' => $user]);
+        return response()->json(['status' => 400, 'message' => 'User Created Successfully', 'userData' => $user]);
     }
 
 
-    public function sendOTP($sender, $numbers, $message, $otp){
+    public function sendOTP($sender, $numbers, $message, $otp)
+    {
 
         $apiKey = urlencode('MDhlMTdhOWIzYWI2ODIzMzQxYWNiZmYwNTY0Mzc1NjE=');
 
@@ -63,7 +64,7 @@ class RegisteredUserController extends Controller
         // $request->session()->put('mobile_number', $numbers);
 
         // Message details
-        $numbers = urlencode($numbers) ;
+        $numbers = urlencode($numbers);
         $sender = urlencode($sender);
 
         $data = 'apikey=' . $apiKey . '&numbers=' . $numbers . "&sender=" . $sender . "&message=" . $message;
@@ -85,15 +86,14 @@ class RegisteredUserController extends Controller
         $sender = 'NATLER';
         $numbers = $request->input('mobileNumber');
         $otp = rand(100000, 999999);
-        $message = rawurlencode('Dear user Please use this OTP : '.$otp.' to continue on Nation Learns.');
+        $message = rawurlencode('Dear user Please use this OTP : ' . $otp . ' to continue on Nation Learns.');
 
-        $otpData= UserOtp::create([
+        $otpData = UserOtp::create([
             'otp' => $otp,
-            'mobile'=> $numbers
+            'mobile' => $numbers
         ]);
 
         $this->sendOTP($sender, $numbers, $message, $otp);
         return true;
     }
-
 }
