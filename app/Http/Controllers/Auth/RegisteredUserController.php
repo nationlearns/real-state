@@ -64,7 +64,7 @@ class RegisteredUserController extends Controller
         // Message details
         $numbers = urlencode($numbers) ;
         $sender = urlencode($sender);
-       
+
         $data = 'apikey=' . $apiKey . '&numbers=' . $numbers . "&sender=" . $sender . "&message=" . $message;
 
         // Send the POST request with cURL
