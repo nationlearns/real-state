@@ -32,16 +32,16 @@
       Login By Email
         <span class="underline"></span>
       </button>
-      <form class="form form-signup">
+      <form class="form form-signup" action="" method="POST">
         <fieldset>
           <legend>Please, enter your email, password and password confirmation for sign up.</legend>
           <div class="input-block">
             <label for="signup-email">E-mail</label>
-            <input id="login-email" placeholder="Enter Your Email" type="email" required>
+            <input id="login-email" placeholder="Enter Your Email" type="email" name="email" required>
           </div>
           <div class="input-block">
             <label for="signup-password">Password</label>
-            <input id="signup-password" placeholder="Enter Your Password" type="password" required>
+            <input id="signup-password" placeholder="Enter Your Password" type="password" name="password" required>
           </div>
         </fieldset>
         <button type="submit" class="btn-signup">Login</button>

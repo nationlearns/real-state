@@ -29,6 +29,7 @@ Route::get('/auth-register', function () {
     return view('auth/register');
 });
 
+// Route::post('post-login',[LoginController::class,'userLogin'])->name('post.login')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,13 +39,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::post('post-login',[LoginController::class,'userLogin']);
-    // ->name('post.login');
-    Route::get('logout', [LoginController::class, 'logout']);
-    // ->name('logout');
 });
 
 require __DIR__.'/auth.php';

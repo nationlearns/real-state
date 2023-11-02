@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return response()->json(['status' => 400, 'message' => 'User Created Successfully', 'userData' => $user]);
+        return response()->json(['status' => 200, 'message' => 'User Created Successfully', 'userData' => $user]);
     }
 
 

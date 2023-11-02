@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-    public function userLogin(Request $request): RedirectResponse
+    public function userLogin(Request $request)
     {
         $request->validate([
             'email' => 'required',
@@ -22,14 +22,16 @@ class LoginController extends Controller
                         ->withSuccess('You have Successfully loggedin');
         }
 
-        return redirect("login")->withSuccess('Opps! You have entered invalid credentials');
+        return redirect("user-login")->withSuccess('Opps! You have entered invalid credentials');
     }
 
-    public function logout(): RedirectResponse
-    {
-        Session::flush();
-        Auth::logout();
+    public function Logout(Request $request){
+        Auth::guard('web')->logout();
 
-        return Redirect('login');
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

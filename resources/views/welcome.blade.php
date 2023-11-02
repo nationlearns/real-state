@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Event HTML Template</title>
+    <title>Real Estate</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
 
@@ -126,7 +126,8 @@
 <li><a href="#contact">Contact</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="{{url('user-login')}}">Login</a></li>
-<li><a href="{{url('auth-register')}}">Register</a></li>
+
+
 
 </ul>
 </nav>
@@ -141,7 +142,6 @@
         <div class="section-bg" style="background-image:url({{ asset('assets/img/background01.jpg') }})"
             data-stellar-background-ratio="0.5"></div>
 
-
         <div class="home-wrapper">
 
             <div class="container">
@@ -150,10 +150,11 @@
 
                     <div class="col-md-8 col-md-offset-2">
                         <div class="home-content">
-                            <h1>Lorem ipsum dolor sit amet</h1>
-                            <h4 class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</h4>
-                            <a href="#" class="main-btn">Buy Ticket</a>
+                            <h1>Discover your dream home or property in just few clicks</h1>
+                            <h4 class="lead">Presenting virtual property expo 2023-24, the ultimate destination for all property needs, we brings the world of real estate to your fingertips</h4>
+                            <h3 style="color: #f2e341">Events starts January 5 2024 To January 8 2024.</h3>
+                            <a href="#" class="main-btn">Register Now</a> <br> <br>
+                            <h4 class="lead">Explore the finest property within your budget at virtual property expo</h4>
                         </div>
                     </div>
 
