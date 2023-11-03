@@ -37,7 +37,7 @@
     <div class="ugf-wrapper theme-bg">
       <div class="ugf-content-block">
         <div class="logo">
-          <a href="https://uigaint.com/demo/html/anfra/index.html">
+          <a href="">
             <img class="light-logo" src="{{asset('auth/assets/images/logo.png')}}" alt="logo">
             <img class="dark-logo" src="{{asset('auth/assets/images/logo-dark2.png')}}" alt="logo">
           </a>
@@ -48,7 +48,7 @@
               <div class="ugf-content pt270">
                 <h2>Let's go! <span>Join with our Platform</span></h2>
                 <p>Inter your valid email address and complete some easy steps <br> for register your account</p>
-                <form action="https://uigaint.com/demo/html/anfra/login-register-1/email-verification.html" class="form-flex email-form">
+                <form action="" class="form-flex email-form">
                   <div class="form-group">
                     <label for="inputMail">Eamil Address</label>
                     <input type="email" placeholder="example@domain.com" class="form-control" id="inputMail" required>

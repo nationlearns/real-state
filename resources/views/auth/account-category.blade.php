@@ -37,7 +37,7 @@
     <div class="ugf-wrapper flat-grey-bg">
       <div class="ugf-content-block">
         <div class="logo">
-          <a href="https://uigaint.com/demo/html/anfra/index.html">
+          <a href="">
             <!-- <img class="light-logo" src="{{asset('auth/assets/images/logo.png')}}" alt=""> -->
             <img class="" src="{{asset('auth/assets/images/logo-dark2.png')}}" alt="">
           </a>

@@ -37,7 +37,7 @@
     <div class="ugf-wrapper flat-grey-bg">
       <div class="ugf-content-block">
         <div class="logo">
-          <a href="https://uigaint.com/demo/html/anfra/index.html">
+          <a href="">
             <!-- <img class="light-logo" src="{{asset('auth/assets/images/logo.png')}}" alt=""> -->
             <img class="" src="{{asset('auth/assets/images/logo-dark2.png')}}" alt="">
           </a>
@@ -47,7 +47,7 @@
             <div class="col-lg-7 offset-lg-5 p-sm-0">
               <div class="ugf-content pt340">
                 <h2>Verify email address</h2>
-                <p>Please check you Email <strong><a href="https://uigaint.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4d9d5ddd8f4d1ccd5d9c4d8d19ad7dbd9">[email&#160;protected]</a></strong> <br> and put the verification code here</p>
+                <p>Please check you Email <strong><a href="" class="__cf_email__" data-cfemail="b4d9d5ddd8f4d1ccd5d9c4d8d19ad7dbd9">[email&#160;protected]</a></strong> <br> and put the verification code here</p>
                 <form action="" class="form-flex email-verification-form">
                   <div class="form-group">
                     <input type="text" placeholder="0" class="form-control" maxlength="1">

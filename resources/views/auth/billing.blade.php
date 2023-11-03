@@ -49,7 +49,7 @@
                 <a href="payment.html" class="prev-page">Back to Previous</a>
                 <h2>Billing Address</h2>
                 <p>Enter payment information to go next step, Don’t worry it’s optional & skip able !</p>
-                <form action="https://uigaint.com/demo/html/anfra/login-register-1/signup-complete.html" class="account-form">
+                <form action="" class="account-form">
                   <div class="row">
                     <div class="col-sm-6 p-sm-0">
                       <div class="form-group country-select">
