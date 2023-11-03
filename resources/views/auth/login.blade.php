@@ -32,7 +32,8 @@
       Login By Email
         <span class="underline"></span>
       </button>
-      <form class="form form-signup" action="" method="POST">
+      <form class="form form-signup" action="{{route('login')}}" method="POST">
+        @csrf
         <fieldset>
           <legend>Please, enter your email, password and password confirmation for sign up.</legend>
           <div class="input-block">
