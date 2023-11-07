@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/create-user', [RegisteredUserController::class, 'createUser']);
-Route::post('/request-otp', [RegisteredUserController::class, 'requestForOtp']);
+Route::post('/create-user', [RegisterController::class, 'createUser']);
+Route::post('/request-otp', [RegisterController::class, 'requestForOtp']);
+Route::post('/verify-otp', [RegisterController::class, 'validateOtpApi']);
 

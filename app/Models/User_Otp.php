@@ -9,6 +9,8 @@ class User_Otp extends Model
 {
     use HasFactory;
 
+    protected $table = 'user_otp'; 
+    
     protected $fillable = [
         'otp',
         'mobile'
