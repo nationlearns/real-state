@@ -10,7 +10,6 @@ class RegisterController extends Controller
     public function createUser(Request $request){
         $data= $request->all();
         $checkUser = User::where('mobile', $data['mobile'])->count();
-        \Log::info('checkUser'.json_encode($checkUser));
         if($checkUser > 0){
             return response()->json(['status'=>405, 'error'=>"User  Already Registered"]);
         }else{
@@ -18,8 +17,7 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'mobile' => $data['mobile'],
             ]);
-            return redirect()->route('account.details',$user);
-
+            return response()->json(['status'=>405, 'error'=>""]);
         }
         
     }
@@ -102,8 +100,8 @@ class RegisterController extends Controller
         return response()->json(['status'=>405,'message' => '','error'=>"SomeThing Went Wrong!"]);
     }
 
-    public function accountDetails(Request $request){
-        $data= $request->all();
-        return view('auth.account-details', compact('data'));
+    public function accountDetails(){
+       
+        return view('auth.account-details');
     }
 }

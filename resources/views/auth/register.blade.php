@@ -283,7 +283,10 @@
             setTimeout(function() {
 						$("#success1").text('');
 			      }, 5000);
-					}
+					}else{
+            window.location = "{{url('/account-details')}}"
+            console.log(window.location);
+          }
 				}
 			});
     }else{
