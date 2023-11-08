@@ -97,7 +97,7 @@
 }
 
 .container{
-  padding-top:50px;
+  /* padding-top:50px; */
   margin: auto;
 }
 .form-control{
@@ -128,7 +128,7 @@
                   </div>
                   <div class="form-group">
                     <label class="label">Email</label>
-                    <input  type="name" placeholder="Enter Your Email" class="form-control" id="inputEmail" required>
+                    <input  type="email" placeholder="Enter Your Email" class="form-control" id="inputEmail" required>
                   </div>
                   <div class="form-group">
                     <label class="label">Password</label>
@@ -305,7 +305,8 @@
                  $("#success1").text(res.error);
                   setTimeout(function() {
 						      $("#success1").text('');
-			            }, 5000);
+			            }, 7000);
+                  $('#myModal').modal('hide');
 					      }else{
                  window.location = "{{url('/account-details')}}"
                 }

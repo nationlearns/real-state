@@ -13,7 +13,7 @@ class RegisterController extends Controller
         $data= $request->all();
         $checkUser = User::where('mobile', $data['mobile'])->count();
         if($checkUser > 0){
-            return response()->json(['status'=>405, 'error'=>"User  Already Registered"]);
+            return response()->json(['status'=>405, 'error'=>"User Account Already Registered With this Number"]);
         }else{
             $user = User::create([
                 'name' => $data['name'],
