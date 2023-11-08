@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('auth/assets/images/icon-72x72.png')}}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{asset('auth/assets/images/icon-114x114.png')}}">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 .button{
   appearance: none;
@@ -66,20 +67,41 @@
 }
 .label{
   font-size: 13px;
-  margin: 5px;
+  padding: 5px 0px;
+  font-weight: 600;
 }
 .modal-button{
+  padding: 15px 0px;
   font-size: 13px;
-   margin: 5px;
+  font-weight: 600;
 }
 .modal-button:hover {
   color: #fff;
   background-color: #1A1A1A;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
+  font-weight: 600;
+
 }
 .modal-button:disabled {
   pointer-events: none;
+}
+
+.field-icon {
+  float: right;
+  margin-right: 10px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
+}
+.form-control{
+  line-height: 3.5;
 }
 </style>
   </head>
@@ -100,15 +122,25 @@
                 <h3>Please complete the following registration form to showcase your properties and projects at the Virtual Property Expo 2023. </h3>
                 <h4>Your participation in this event will connect you with a global audience of potential buyers and investors.</h4>
                 <h4 class="success" style="color:red" id="success1"></h4>
-                <div class="form-group">
-                    <label class="label">Enter Mobile</label>
-                    <input style="line-height: 3.5;" type="mobile" placeholder="+919981737342" class="form-control" id="inputMobile" maxlength="10" required>
-                  </div>
+                   <div class="form-group">
                     <label class="label">Name</label>
-                    <input style="line-height: 3.5;" type="name" placeholder="Enter Your Name" class="form-control" id="inputName" required>
+                    <input type="mobile" placeholder="Name" class="form-control" id="inputName"  required>
+                  </div>
+                  <div class="form-group">
+                    <label class="label">Email</label>
+                    <input  type="name" placeholder="Enter Your Email" class="form-control" id="inputEmail" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="label">Password</label>
+                    <input id="password-field" type="password" class="form-control" name="password" placeholder="Password">
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                  <div class="form-group">
+                    <label class="label">Mobile</label>
+                    <input type="name" placeholder="+91" class="form-control" id="inputMobile" maxlength="10" required>
                   </div>
                   <button id="openModalBtn" class="modal-button" data-toggle="modal" data-target="#myModal">Validate To Continue<i class="las la-arrow-right"></i></button>
-                  <button class="button" id="registerUser" disabled>Register</button>
+                  <!-- <button class="button" id="registerUser" disabled>Register</button> -->
               </div>
             </div>
           </div>
@@ -201,11 +233,15 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script>
   jQuery("#openModalBtn").click(function () {
         var mobile = $("#inputMobile").val();
         var name= $("#inputName").val();
-		if(mobile != '' || name != ''){
+        var email= $("#inputEmail").val();
+        var password= $("#password-field").val();
+
+		if(mobile != '' || name != '' || email != '' || password  != ''){
 			$.ajax({
 				url: "/api/request-otp",
 				type: 'POST',
@@ -246,6 +282,9 @@
 	 let otp = 	$('#inputOtp').val();
    var mobile = $("#inputMobile").val();
 	 const start = Date.now();
+   var name= $("#inputName").val();
+   var email= $("#inputEmail").val();
+  var password= $("#password-field").val();
 		$.ajax({
             url: "/api/verify-otp",
             type: 'POST',
@@ -257,13 +296,21 @@
 						      $("#error").text('');
 					        }, 5000);
                 } else {
-					        $("#success").text(res.success);
-                  $('#registerUser').attr('disabled',false);
-                  $('#openModalBtn').attr('disabled',true);
-					        setTimeout(function() {
-						      $("#error").text('');
-					        }, 3000);
-                  $('#myModal').modal('hide');
+					        $.ajax({
+				          url: "/api/create-user",
+				          type: 'POST',
+				          data: { mobile: mobile , name:name, email :email,password:password },
+				        success: function (res) {
+					      if (res.error != '') {
+                 $("#success1").text(res.error);
+                  setTimeout(function() {
+						      $("#success1").text('');
+			            }, 5000);
+					      }else{
+                 window.location = "{{url('/account-details')}}"
+                }
+				      }
+			});
                  }
             }
         });
@@ -272,6 +319,7 @@
   jQuery("#registerUser").click(function () {
         var mobile = $("#inputMobile").val();
         var name= $("#inputName").val();
+        
 		if(mobile != '' || name != ''){
 			$.ajax({
 				url: "/api/create-user",
@@ -285,7 +333,6 @@
 			      }, 5000);
 					}else{
             window.location = "{{url('/account-details')}}"
-            console.log(window.location);
           }
 				}
 			});
@@ -296,6 +343,16 @@
 			}, 5000);
     }
     });
-    
+
+
+$(".toggle-password").click(function() {
+$(this).toggleClass("fa-eye fa-eye-slash");
+var input = $($(this).attr("toggle"));
+if (input.attr("type") == "password") {
+  input.attr("type", "text");
+} else {
+  input.attr("type", "password");
+}
+});
 </script>
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserOtp;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 class RegisterController extends Controller
 {
     public function createUser(Request $request){
@@ -16,6 +18,8 @@ class RegisterController extends Controller
             $user = User::create([
                 'name' => $data['name'],
                 'mobile' => $data['mobile'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password'])
             ]);
             return response()->json(['status'=>405, 'error'=>""]);
         }
